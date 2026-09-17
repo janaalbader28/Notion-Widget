@@ -1,0 +1,163 @@
+/* =====================================================
+   EASY-EDIT SETTINGS
+   ===================================================== */
+:root {
+  --card-bg: #ffffff;      /* background of both inner cards (always white)  */
+  --event-ink: #5b8fb3;    /* text color for the current event, set by JS    */
+  --event-border: #bcdcee; /* outer frame color for the event, set by JS     */
+  --widget-radius: 25px;   /* corner rounding of the outer frame              */
+  --card-radius: 18px;     /* corner rounding of each inner card              */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 12px;
+}
+
+/* =====================================================
+   WIDGET SHELL — an outer light-colored frame (the event's border
+   color) holding two equal, fully-rounded white cards side by side.
+   The frame's own background fills the gap between the cards, so it
+   reads as a connecting border without fighting either card's corners.
+   ===================================================== */
+.widget {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1.6 / 1;
+  min-height: 180px;
+  gap: 10px;
+  padding: 14px;
+  background: var(--event-border);
+  border-radius: var(--widget-radius);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  transition: background-color 200ms ease;
+}
+
+.card {
+  flex: 1 1 0;
+  height: 100%;
+  min-width: 0;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+/* =====================================================
+   LEFT CARD — info panel on top, event image below
+   ===================================================== */
+.card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(8px, 4%, 14px);
+  gap: 8px;
+}
+
+.info-panel {
+  position: relative;
+  flex: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: clamp(8px, 5%, 14px) clamp(6px, 4%, 10px);
+}
+
+/* pixel "seam" line across the middle, echoing a flip clock — only
+   shown while a plain digit is displayed, not during the period text */
+.info-panel::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 50%;
+  height: 2px;
+  background: var(--event-ink);
+  opacity: 0.3;
+  transform: translateY(-1px);
+}
+
+.info-panel.is-period::after {
+  display: none;
+}
+
+.panel-value {
+  position: relative;
+  z-index: 1;
+  color: var(--event-ink);
+  font-size: clamp(20px, 9vw, 34px);
+  letter-spacing: 1px;
+  transition: color 200ms ease;
+}
+
+.panel-value.is-period {
+  font-size: clamp(7px, 2.6vw, 10px);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.panel-label {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(6px, 1.8vw, 8px);
+  color: var(--event-ink);
+  letter-spacing: 1px;
+  transition: color 200ms ease;
+}
+
+.event-image-wrap {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.event-image-wrap.is-empty {
+  display: none;
+}
+
+.event-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* =====================================================
+   RIGHT CARD — event name only
+   ===================================================== */
+.card-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(10px, 6%, 18px);
+}
+
+.event-title {
+  margin: 0;
+  font-size: clamp(9px, 3.6vw, 15px);
+  color: var(--event-ink);
+  line-height: 1.7;
+  transition: color 200ms ease;
+}

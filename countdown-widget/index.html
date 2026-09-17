@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+
+  <!-- Pixel-style font. Remove this <link> + the font-family in style.css if you'd rather avoid the external request. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="widget" id="widget">
+
+    <!-- LEFT CARD — days-left (or, once the event has started, its date period) + image -->
+    <div class="card card-left" id="leftCard">
+      <div class="info-panel" id="infoPanel">
+        <span class="panel-value" id="panelValue">00</span>
+        <span class="panel-label" id="panelLabel">DAYS LEFT</span>
+      </div>
+
+      <div class="event-image-wrap" id="eventImageWrap">
+        <img class="event-image" id="eventImage" src="" alt="">
+      </div>
+    </div>
+
+    <!-- RIGHT CARD — event name only -->
+    <div class="card card-right" id="rightCard">
+      <h2 class="event-title" id="eventTitle">Event</h2>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
