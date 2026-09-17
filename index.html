@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Mode</title>
+
+  <!-- Pixel-style font. Remove this <link> + the font-family in style.css if you'd rather avoid the external request. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="widget">
+    <div class="widget-bg"></div>
+
+    <div class="widget-content">
+      <!-- ============================================= -->
+      <!--  EDIT THE TITLE TEXT HERE                      -->
+      <!-- ============================================= -->
+      <h1 class="title">✦ Choose Your Mode ✦</h1>
+
+      <div class="cats">
+        <!-- CAT 1 — edit data-mode here -->
+        <button class="cat-option" type="button" data-mode="cat1" aria-pressed="false">
+          <span class="cat-visual">
+            <span class="ring" aria-hidden="true"></span>
+            <img class="cat-img" src="images/cat1.png" alt="Cat 1">
+          </span>
+        </button>
+
+        <!-- CAT 2 — edit data-mode here -->
+        <button class="cat-option" type="button" data-mode="cat2" aria-pressed="false">
+          <span class="cat-visual">
+            <span class="ring" aria-hidden="true"></span>
+            <img class="cat-img" src="images/cat2.png" alt="Cat 2">
+          </span>
+        </button>
+
+        <!-- CAT 3 — edit data-mode here -->
+        <button class="cat-option" type="button" data-mode="cat3" aria-pressed="false">
+          <span class="cat-visual">
+            <span class="ring" aria-hidden="true"></span>
+            <img class="cat-img" src="images/cat3.png" alt="Cat 3">
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
