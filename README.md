@@ -16,8 +16,10 @@ More widgets coming soon. ✦
 
 You can embed the widgets directly into Notion or other projects.
 
-**Mood Tracker:**  `https://notion-mode-tracker.vercel.app/`
+**Mood Tracker:**  
+[Open Mood Tracker](https://notion-mode-tracker.vercel.app/)
 
-**Holiday Countdown:**  `https://notion-holiday-countdown.vercel.app/`
+**Holiday Countdown:**  
+[Open Holiday Countdown](https://notion-holiday-countdown.vercel.app/)
 
 Just copy the link and add it using `/embed` in Notion.
